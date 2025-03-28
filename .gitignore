@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/DramRefresh.sln
+/DramRefresh.vcxproj.filters
+/DramRefresh.vcxproj
