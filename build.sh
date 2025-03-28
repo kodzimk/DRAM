@@ -1,0 +1,1 @@
+gcc -o dram src/main.c
