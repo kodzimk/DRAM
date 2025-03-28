@@ -9,6 +9,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+dram.exe
+dram
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -364,3 +366,9 @@ FodyWeavers.xsd
 /DramRefresh.sln
 /DramRefresh.vcxproj.filters
 /DramRefresh.vcxproj
+/dram
+/dram
+/dram
+/dram.exe
+/dram.exe
+/dram
