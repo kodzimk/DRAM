@@ -9,6 +9,7 @@ typedef struct {
 }Chip;
 
 void init_chip(Chip* chip);
+void refresh_chip(Chip* chip);
 char* read_data_from_chip(Chip* bank, char address_bus[12]);
 void write_data_to_chip(Chip* chip, char* data, char address_bus[12]);
 
@@ -21,6 +22,14 @@ void init_chip(Chip* chip)
 	for (int i = 0; i < 8; i++)
 	{
 		init_bank(&chip->banks[i]);
+	}
+}
+
+void refresh_chip(Chip* chip)
+{
+	for (size_t i = 0; i < 8; i++)
+	{
+		refresh_bank(&chip->banks[i]);
 	}
 }
 

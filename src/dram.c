@@ -1,25 +1,23 @@
 
 #define CHIP_IMPLEMENTATION
 #include"chip.h"
+#include<time.h>
+#include<math.h>
 
-int main()
+Chip chip;
+
+int main(void)
 {
-	Chip chip;
+    init_chip(&chip);
 
-	init_chip(&chip);
+    int index = 0;
+    while (index < 1) {
+        clock_t start = clock();
+        refresh_chip(&chip);
+        clock_t end = clock();
+        double cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
 
-	char address_bus[12] = { '1','1','0','0','0','0','0','0','0','0','0','0' };
-	char data[8] = { '1','1','1','1','1','1','1','1' };
-	write_data_to_chip(&chip, data, address_bus);
-
-	for (size_t j= 0; j < 8; j++)
-	{
-			for (size_t k = 0; k < 8; k++)
-			{
-				printf("%c", chip.banks[0].memory[0].cells[j][k].capacitor);
-			}printf("\n");
-	}
-	
-
-	return 0;
+        printf("Took %f seconds to refresh \n", cpu_time_used);
+        index++;
+    }
 }

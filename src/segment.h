@@ -23,6 +23,7 @@ typedef struct {
 
 char read_bit_from_cell(Memory_Array* arr, char control_lines[12]);
 void write_bit_to_cell(Memory_Array* arr,char control_lines[12], char data);
+void refresh_cells(Memory_Array* arr);
 void init_cells(Memory_Array* arr);
 
 #endif
@@ -70,6 +71,21 @@ char read_bit_from_cell(Memory_Array* arr, char address_bus[12])
 
 	arr->stage = 'N';
 	return choose_bite(arr->sense_amplifier, column_addr);
+}
+
+void refresh_cells(Memory_Array* arr)
+{
+	for (int i = 0; i < 8; ++i)
+	{
+		for (int j = 0; j < 8; ++j) {
+			arr->sense_amplifier[i] = arr->cells[i][j].capacitor;
+		}
+		for (size_t k = 0; k < 8; ++k)
+		{
+			arr->cells[i][k].capacitor = arr->sense_amplifier[k];
+			arr->sense_amplifier[k] = ' ';
+		}
+	}
 }
 
 void write_bit_to_cell(Memory_Array* arr, char address_bus[12], char data)

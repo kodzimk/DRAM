@@ -9,6 +9,7 @@ typedef struct {
 }Bank;
 
 void init_bank(Bank *bank);
+void refresh_bank(Bank* bank);
 char* read_data_from_bank(Bank* bank,char address_bus[12]);
 void write_data_to_bank(Bank* bank,char* data,char address_bus[12]);
 
@@ -21,6 +22,14 @@ void init_bank(Bank* bank)
 	for (int i = 0; i < 8; i++)
 	{
 		init_cells(&bank->memory[i]);
+	}
+}
+
+void refresh_bank(Bank* bank)
+{
+	for (int i = 0; i < 8; i++)
+	{
+		refresh_cells(&bank->memory[i]);
 	}
 }
 
