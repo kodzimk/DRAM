@@ -2,8 +2,6 @@
 #ifndef MPLEX_H
 #define MPLEX_H
 
-#include<math.h>
-#include<stdio.h>
 
 char choose_bite(char bites[8],char control_lines[3]);
 
