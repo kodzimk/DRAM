@@ -2,7 +2,7 @@ CFLAGS =
 LIBS = 
 
 build:
-	$(CC) $(CFLAGS) -o dram src/main.c src/components/MPlex.h src/components/DEMPlex.h src/components/cell.h $(LIBS)
+	$(CC) $(CFLAGS) -o dram src/main.c src/segment.h src/components/*.h $(LIBS)
 
 run:
 	./dram

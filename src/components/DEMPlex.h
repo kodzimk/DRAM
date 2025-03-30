@@ -6,7 +6,7 @@ void choose_bite_addr(char bit, char control_lines[3], char* bites);
 
 #endif
 
-#ifndef DEMPLEX_IMPLEMENTATION
+#ifdef DEMPLEX_IMPLEMENTATION
 
 void choose_bite_addr(char bit, char control_lines[3],char* bites)
 {

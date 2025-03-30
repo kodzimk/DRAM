@@ -1,1 +1,1 @@
-gcc -o dram src/main.c src/components/MPlex.h src/components/DEMPlex.h src/components/cell.h -lm
+gcc -o dram src/main.c src/segment.h src/components/*.h -lm

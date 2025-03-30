@@ -7,7 +7,7 @@ char choose_bite(char bites[8],char control_lines[3]);
 
 #endif
 
-#ifndef MPLEX_IMPLEMENTATION
+#ifdef MPLEX_IMPLEMENTATION
 
 char choose_bite(char bites[8], char control_lines[3])
 {

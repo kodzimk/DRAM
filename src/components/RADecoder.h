@@ -1,12 +1,12 @@
 // RADecorder = Row address decoder a component of DRAM 
-#ifndef DEMPLEX_H
-#define DEMPLEX_H
+#ifndef RADECODER_H
+#define RADECODER_H
 
 int decode_ras_pins(char control_lines[3]);
 
 #endif
 
-#ifndef DEMPLEX_IMPLEMENTATION
+#ifdef RADECODER_IMPLEMENTATION
 
 int decode_ras_pins(char control_lines[3])
 {

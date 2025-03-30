@@ -1,6 +1,8 @@
 #ifndef CELL_H
 #define CELL_H
 
+#include<stdbool.h>
+
 typedef struct {
 	char bit;
 	char capacitor;
@@ -11,7 +13,7 @@ void init_cell(cell_t* cell);
 
 #endif
 
-#ifndef CELL_IMPLEMENTATION
+#ifdef CELL_IMPLEMENTATION
 
 void init_cell(cell_t* cell)
 {
