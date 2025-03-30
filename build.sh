@@ -1,1 +1,1 @@
-gcc -o dram src/main.c src/segment.h src/components/*.h -lm
+gcc -o src/dram.c src/*.h src/components/*.h -lm

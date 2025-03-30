@@ -11,10 +11,10 @@ int decode_ras_pins(char control_lines[3]);
 int decode_ras_pins(char control_lines[3])
 {
 	if (control_lines[0] == '0' && control_lines[1] == '0' && control_lines[2] == '0') {
-		return 1;
+		return 0;
 	}
 	else if (control_lines[2] == '1' && control_lines[0] == '0' && control_lines[1] == '0') {
-		return 0;
+		return 1;
 	}
 
 	int row_addr = 0;

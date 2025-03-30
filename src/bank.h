@@ -1,7 +1,7 @@
 #ifndef BANK_H
 #define BANK_H
 
-#define SEGMENT_IMPLEMENTAION
+#define SEGMENT_IMPLEMENTATION
 #include"segment.h"
 
 typedef struct {
@@ -9,8 +9,8 @@ typedef struct {
 }Bank;
 
 void init_bank(Bank *bank);
-char* read_data_from_bank(Bank* bank,char address_bus[9]);
-void write_data_to_bank(Bank* bank,char* data,char address_bus[9]);
+char* read_data_from_bank(Bank* bank,char address_bus[12]);
+void write_data_to_bank(Bank* bank,char* data,char address_bus[12]);
 
 #endif
 
@@ -29,9 +29,9 @@ void init_bank(Bank* bank)
 // address_bus[2] = WE
 // address_bus[3 - 5] = row address
 // address_bus[6 - 8] = column address
-char* read_data_from_bank(Bank* bank, char address_bus[9])
+char* read_data_from_bank(Bank* bank, char address_bus[12])
 {
-	char data[8];
+	char* data = malloc(sizeof(char) * 9);
 	for (int i = 0; i < 8; i++)
 	{
 		data[i] = read_bit_from_cell(&bank->memory[i], address_bus);
@@ -40,7 +40,7 @@ char* read_data_from_bank(Bank* bank, char address_bus[9])
 	return data;
 }
 
-void write_data_to_bank(Bank* bank, char* data, char address_bus[9])
+void write_data_to_bank(Bank* bank, char* data, char address_bus[12])
 {
 	for (int i = 0; i < 8; i++)
 	{

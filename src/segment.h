@@ -12,14 +12,17 @@
 #include"components/MPlex.h"
 #include"components/cell.h"
 
+#include<stdlib.h>
+#include<stdio.h>
+
 typedef struct {
 	char stage;
 	cell_t cells[8][8];
 	char sense_amplifier[8];
 }Memory_Array;
 
-char read_bit_from_cell(Memory_Array* arr, char control_lines[9]);
-void write_bit_to_cell(Memory_Array* arr,char control_lines[9], char data);
+char read_bit_from_cell(Memory_Array* arr, char control_lines[12]);
+void write_bit_to_cell(Memory_Array* arr,char control_lines[12], char data);
 void init_cells(Memory_Array* arr);
 
 #endif
@@ -43,7 +46,7 @@ void init_cells(Memory_Array* arr)
 	}
 }
 
-char read_bit_from_cell(Memory_Array* arr, char address_bus[9])
+char read_bit_from_cell(Memory_Array* arr, char address_bus[12])
 {
 	if (address_bus[2] == '0') {
 		arr->stage = 'R';
@@ -69,7 +72,7 @@ char read_bit_from_cell(Memory_Array* arr, char address_bus[9])
 	return choose_bite(arr->sense_amplifier, column_addr);
 }
 
-void write_bit_to_cell(Memory_Array* arr, char address_bus[9], char data)
+void write_bit_to_cell(Memory_Array* arr, char address_bus[12], char data)
 {
 	if (address_bus[2] == '0') {
 		arr->stage = 'W';
