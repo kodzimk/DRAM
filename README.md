@@ -8,8 +8,7 @@ a way to solve refresh problem (energy,power,time) related to dram refreshes
 
 # Short Explanation
 
-This program implemented a whole dram system at level of chips(There is no dimm only bank)<br>
-Testing some algorithm with benchmarks and time<br>
+This program implemented a whole dram system at level of chips and my dram prototype and architecture(There is whole dimm)<br>
 You can add our idea or implementation just refactoring the code<br>
 Good luck!<br>
 
