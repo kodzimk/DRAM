@@ -4,7 +4,6 @@
 #include<stdbool.h>
 
 typedef struct {
-	char bit;
 	char capacitor;
 	bool transistor;
 }cell_t;
@@ -17,7 +16,6 @@ void init_cell(cell_t* cell);
 
 void init_cell(cell_t* cell)
 {
-	cell->bit = '0';
 	cell->capacitor = '0';
 	cell->transistor = 0;
 }
