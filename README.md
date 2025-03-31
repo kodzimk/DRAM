@@ -24,6 +24,15 @@ I would like to implement RAIDR<br>
 
 # Build and Running
 Requirement gcc.<br>
+In two platforms
+
+```sh
+cd src/components
+make
+cd ../..
+```
+
+Then<br>
 
 ## Linux
 
