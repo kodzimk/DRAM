@@ -46,4 +46,5 @@ make
 ```sh
 ./build.sh
 ./dram.exe
+MUST HAVE: GCC 
 ```
